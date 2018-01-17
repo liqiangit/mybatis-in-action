@@ -12,8 +12,13 @@
 		<typeAlias alias="role" type="com.learn.chapter2.po.Role" />
 	</typeAliases>
 	<plugins>
-		<plugin interceptor="com.github.pagehelper.PageInterceptor"/>
-	</plugins>	
+		<!-- <plugin interceptor="com.github.pagehelper.PageInterceptor"/> -->
+		<plugin interceptor="com.learn.chapter2.interceptor.PageInterceptor" />
+		<plugin interceptor="com.learn.chapter2.interceptor.PageInterceptor2" />
+		<plugin interceptor="com.learn.chapter2.interceptor.PageInterceptor3" />
+		<plugin interceptor="com.learn.chapter2.interceptor.PageInterceptor4" />
+
+	</plugins>
 	<!-- 定义数据库信息，默认使用development数据库构建环境 -->
 	<environments default="development">
 		<environment id="development">

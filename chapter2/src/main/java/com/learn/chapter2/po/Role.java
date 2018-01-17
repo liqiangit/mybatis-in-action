@@ -2,7 +2,9 @@ package com.learn.chapter2.po;
 
 import java.io.Serializable;
 
-public class Role implements Serializable {
+import com.learn.chapter2.interceptor.PageInfo;
+
+public class Role extends PageInfo implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 

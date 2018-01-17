@@ -1,5 +1,8 @@
 package com.learn.chapter2.mapper;
 
+import java.util.List;
+import java.util.Map;
+
 import org.apache.ibatis.annotations.Select;
 
 import com.learn.chapter2.po.Role;
@@ -9,6 +12,8 @@ public interface RoleMapper {
 	int insertRole(Role role);
 
 	Role getRole(Long id);
+	
+	List<Role> getRoles(Map<String,Object> map);
 
 	int deleteRole(Long id);
 
