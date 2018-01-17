@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.corpus.test.mapper.CorpusMapper">
+
+    <!--<cache type="org.mybatis.caches.redis.RedisCache" />-->
+
+    <insert id="insertCorpus" parameterType="corpusBean">
+        insert into corpus(word,classify,frequncy) values(#{word}, #{classify}, #{frequncy})
+    </insert>
+
+    <insert id="insertCorpusList" parameterType="list">
+        insert into corpus(word,classify,frequncy)
+        values
+        <foreach collection="list" item="item" index="index" separator="," >
+            (#{item.word},#{item.classify},#{item.frequncy})
+        </foreach>
+    </insert>
+</mapper>

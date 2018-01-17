@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Context>
+	<Resource name="jdbc/chapter8"
+		auth="Container"
+		type="javax.sql.DataSource"
+		driverClassName="com.mysql.jdbc.Driver"
+		url="jdbc:mysql://192.168.180.100:3306/chapter8?zeroDateTimeBehavior=convertToNull"
+		username="root"
+		password="root@123"
+		maxActive="50"
+		maxIdle="30"
+		maxWait="10000"
+	/>
+</Context>

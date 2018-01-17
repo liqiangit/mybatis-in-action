@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration
+	PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+	<!--<settings>
+		<setting name="logImpl" value="LOG4J" />
+		<setting name="cacheEnabled" value="true" />
+	</settings>-->
+	<!--使用properties文件配置-->
+	<properties resource="jdbc.properties"/>
+	<!-- 定义别名 -->
+	<typeAliases>
+		<typeAlias alias="corpusBean" type="com.corpus.test.po.CorpusBean" />
+	</typeAliases>
+	<!-- 定义数据库信息，默认使用development数据库构建环境 -->
+	<environments default="development">
+		<environment id="development">
+			<!-- 采用jdbc事务管理 -->
+			<transactionManager type="JDBC">
+				<property name="autoCommit" value="false" />
+			</transactionManager>
+			<!-- 配置数据库链接信息 -->
+			<dataSource type="POOLED">
+				<property name="driver" value="${driver}" />
+				<property name="url" value="${url}" />
+				<property name="username" value="${username}" />
+				<property name="password" value="${password}" />
+			</dataSource>
+		</environment>
+	</environments>
+	<!-- 定义映射器 -->
+	<mappers>
+		<mapper resource="com/corpus/test/mapper/CorpusMapper.xml" />
+	</mappers>
+</configuration>
